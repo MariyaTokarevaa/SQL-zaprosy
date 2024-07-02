@@ -8,7 +8,7 @@ INSERT INTO MusicianGenre(Genre_id, Musician_id)
     VALUES (1, 1), (2, 2), (3, 3), (4, 4), (5,5);
     
 INSERT INTO Album(Album_name, Year_of_release_album)
-    VALUES ('Группа крови', 1988), ('Зеркало мира', 1983), ('The Look of Love', 2001), ('Симфония № 9', 1824), ('Баста 1', 2006);
+    VALUES ('Группа крови', 1988), ('Зеркало души', 1978), ('The Look of Love', 2001), ('Симфония № 9', 1824), ('Баста 1', 2006);
 
 INSERT INTO AlbumMusician(Musician_id, Album_id)
     VALUES (1, 1), (2, 2), (3, 3), (4, 4), (5, 5);
