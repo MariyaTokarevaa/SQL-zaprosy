@@ -3,7 +3,7 @@
 SELECT Track_name, Duration 
     FROM Track 
     WHERE Duration = (
-    SELECT max(Duration)
+    SELECT MAX(Duration)
     FROM Track
    );
     
