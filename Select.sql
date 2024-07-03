@@ -2,8 +2,10 @@
 --Название и продолжительность самого длительного трека.
 SELECT Track_name, Duration 
     FROM Track 
-    ORDER BY Duration DESC 
-    LIMIT 1;
+    WHERE Duration = (
+    SELECT max(Duration)
+    FROM Track
+   );
     
 --Название треков, продолжительность которых не менее 3,5 минут.
 SELECT Track_name, Duration
