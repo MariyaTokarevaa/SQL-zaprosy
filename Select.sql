@@ -51,11 +51,13 @@ SELECT album_name, AVG(Track.duration)
    
 --Все исполнители, которые не выпустили альбомы в 2020 году.
 SELECT Musician_name
-	FROM musician
-	LEFT JOIN AlbumMusician ON Musician_id = AlbumMusician.musician_id 
-	LEFT JOIN album ON AlbumMusician.album_id = album_id 
-	WHERE album.year_of_release_album < 2020
-	GROUP by Musician_name;
+    FROM Musician
+    WHERE Musician.id NOT IN (
+	SELECT AlbumMusician.Musician_id 
+	FROM AlbumMusician
+	JOIN Album ON AlbumMusician.album_id = Album_id
+	WHERE Album.year_of_release_album = 2020
+	);
 
 --Названия сборников, в которых присутствует конкретный исполнитель (выберите его сами).
 SELECT DISTINCT collection_name FROM collection  
